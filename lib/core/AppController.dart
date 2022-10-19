@@ -312,7 +312,6 @@ class AppController extends ChangeNotifier {
           if(_gotData) return;
           bool connected = await _http.isConnected();
           if (connected) {
-            print('y');
             _getData();
             _gotData = true;
             notifyListeners();

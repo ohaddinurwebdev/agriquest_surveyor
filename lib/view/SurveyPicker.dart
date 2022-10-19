@@ -31,7 +31,9 @@ class _MyHomePageState extends State<SurveyPicker> {
     _appController = Provider.of<AppController>(context);
     return Scaffold(
       appBar: AppBar(
-        title: TranslatedText('New survey'),
+        title: Container(
+            width: MediaQuery.of(context).size.width*0.8,
+            child: TranslatedText('New survey')),
       ),
       body: Container(
         height: MediaQuery.of(context).size.height,
@@ -43,7 +45,8 @@ class _MyHomePageState extends State<SurveyPicker> {
             style: TextStyle(
                 color: Colors.grey, fontSize: 18)) :
             Stack(children: [
-                Column(
+              SingleChildScrollView(
+            child: Column(
                   children: [
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -358,10 +361,10 @@ class _MyHomePageState extends State<SurveyPicker> {
                                                               );
                                                             Timer(
                                                                 Duration(
-                                                                    seconds: 5),
+                                                                    seconds: 1),
                                                                 () {
-                                                              _selectedFarmerId =
-                                                                  null;
+                                                                  setState((){
+                                                                    _selectedFarmerId = null;});
                                                             });
                                                           },
                                                         ),
@@ -380,7 +383,7 @@ class _MyHomePageState extends State<SurveyPicker> {
                       ),
                     ),
                   ],
-                ),
+                )),
                 Positioned.fill(
                   child: _appController.dialogMessage == ''
                       ? Container()

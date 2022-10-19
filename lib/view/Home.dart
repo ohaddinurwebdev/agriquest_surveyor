@@ -242,17 +242,20 @@ class _MyHomePageState extends State<Home> {
                             height: 140.0,
                             fit: BoxFit.cover,
                           ),
+                          /*
                           SizedBox(height: 20),
                           Text(
                             'Agriquest',
                             style: TextStyle(
                               decoration: TextDecoration.none,
-                              color: Color(0xff3769ab),
+                              color: Theme.of(context).backgroundColor,
                               fontFamily: 'Helvetica',
                               fontSize: 36,
                               fontWeight: FontWeight.w400,
                             ),
                           ),
+
+                           */
                           SizedBox(height: 150),
                         ])))),
               ) : Container())

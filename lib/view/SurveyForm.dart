@@ -75,13 +75,15 @@ class _MyHomePageState extends State<SurveyForm> {
     _appController = Provider.of<AppController>(context);
     return Scaffold(
       appBar: AppBar(
-        title: Row(
+        title: Container(
+            width: MediaQuery.of(context).size.width*0.8,
+            child: Row(
           children: [
-            TranslatedText(widget.surveyName),
+            Flexible(child: TranslatedText(widget.surveyName)),
             Text(' '),
             TranslatedText('survey'),
           ],
-        ),
+        )),
       ),
       body: widget.farmerId == null || _appController.farmers[widget.farmerId] == null ?
       Container() : Stack(
@@ -140,7 +142,7 @@ class _MyHomePageState extends State<SurveyForm> {
                                                                       bottom: 5),
                                                               child: Row(
                                                                 children: [
-                                                                Flexible(child:TranslatedText(
+                                                              Flexible(child:TranslatedText(
                                                                     question.dataType,
                                                                     style: TextStyle(
                                                                         fontSize: 14,
@@ -651,8 +653,8 @@ class _MyHomePageState extends State<SurveyForm> {
   // When we reach here, permissions are granted and we can
   // continue accessing the position of the device.
   Position pos = await Geolocator.getCurrentPosition();
-  print(pos.latitude.toStringAsFixed(10));
-  print(pos.longitude.toStringAsFixed(10));
+  //print(pos.latitude.toStringAsFixed(10));
+  //print(pos.longitude.toStringAsFixed(10));
     _textControlers['Latitude'].text = pos.latitude.toStringAsFixed(10);
     _textControlers['Longitude'].text = pos.longitude.toStringAsFixed(10);
   }
