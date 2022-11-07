@@ -52,7 +52,7 @@ android {
         applicationId "agriquest.surveyor"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
-        versionCode 5
+        versionCode 8
         versionName "1.00"
     }
 

@@ -111,10 +111,9 @@ class _MyHomePageState extends State<SurveyPicker> {
                       ],
                     ) ,
                     SingleChildScrollView(
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Column(
+                      child: Container(
+                          padding: EdgeInsets.symmetric(horizontal: 20),
+                          child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               SizedBox(height: 20),
@@ -275,7 +274,7 @@ class _MyHomePageState extends State<SurveyPicker> {
                                             surveyName == ''
                                                 ? Padding(
                                                     padding: const EdgeInsets.only(
-                                                        bottom: 10),
+                                                        bottom: 20),
                                                     child: TranslatedText('Select survey:',
                                                         textAlign: TextAlign.center,
                                                         style: TextStyle(
@@ -372,15 +371,14 @@ class _MyHomePageState extends State<SurveyPicker> {
                                                         Text(_existingSurveyDates(
                                                                 _selectedFarmerId,
                                                                 surveyName) ??
-                                                            '')
+                                                            '',
+                                                            style: TextStyle(height: 1.65))
                                                       ],
                                                     ),
                                                   )
                                         ])
                             ],
-                          )
-                        ],
-                      ),
+                          ))
                     ),
                   ],
                 )),

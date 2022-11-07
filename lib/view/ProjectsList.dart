@@ -24,7 +24,7 @@ class ProjectsList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       TranslatedText('Pick a group:',
-                          textAlign: TextAlign.center,
+                          textAlign: TextAlign.left,
                           style: TextStyle(color: Colors.grey, fontSize: 16)),
                       SizedBox(
                         height: 10,

@@ -21,6 +21,7 @@ class _MyHomePageState extends State<Home> {
   bool _coverVisible = true;
   bool _coverExists  = true;
   bool _logoVisible = false;
+  int _logoFadeTime = 3;
   bool _showUserMenu = false;
 
   @override
@@ -34,6 +35,8 @@ class _MyHomePageState extends State<Home> {
     Timer(Duration(seconds: 5), () {
       setState(() {
         _coverVisible = false;
+        _logoFadeTime = 1;
+        _logoVisible = false;
       });
       Timer(Duration(seconds: 1), () {
         setState(() {
@@ -180,15 +183,13 @@ class _MyHomePageState extends State<Home> {
                             _appController.password == null ||
                             _appController.password == ''
                         ? LoginForm()
-                        : Padding(
-                            padding: const EdgeInsets.only(bottom: 100),
-                            child: _appController.permissions == null
+                        : _appController.permissions == null
                                 ? TranslatedText(
                                     'No data available,\n please connect to the web to load data.',
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.grey, fontSize: 18))
-                                : ProjectsList())),
+                                : ProjectsList()),
               ),
               _appController.unsavedCount > 0
                   ? Row(
@@ -228,36 +229,18 @@ class _MyHomePageState extends State<Home> {
                 opacity: _coverVisible ? 1.0 : 0.0,
                 duration: Duration(seconds: 1),
                 child: Container(
+                    height: MediaQuery.of(context).size.height,
                 color: Colors.white,
                     child:
                     AnimatedOpacity(
                     opacity: _logoVisible ? 1.0 : 0.0,
-    duration: Duration(seconds: 3),
-    child: Center(
-                    child: Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
+    duration: Duration(seconds: _logoFadeTime),
+    child: Center(child:
                           Image.asset(
                             'Agriquest.png', //'roundagon.png',
                             height: 140.0,
                             fit: BoxFit.cover,
-                          ),
-                          /*
-                          SizedBox(height: 20),
-                          Text(
-                            'Agriquest',
-                            style: TextStyle(
-                              decoration: TextDecoration.none,
-                              color: Theme.of(context).backgroundColor,
-                              fontFamily: 'Helvetica',
-                              fontSize: 36,
-                              fontWeight: FontWeight.w400,
-                            ),
-                          ),
-
-                           */
-                          SizedBox(height: 150),
-                        ])))),
+                          )))),
               ) : Container())
         ],
       ),

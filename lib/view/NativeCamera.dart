@@ -177,7 +177,7 @@ class _NativeCameraState extends State<NativeCamera> {
                           },
                         ),
                   !_snapped
-                      ? Container()
+                      ? SizedBox(width: 75,)
                       : InkWell(
                           child: Container(
                             padding: EdgeInsets.all(25),
