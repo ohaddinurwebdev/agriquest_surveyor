@@ -284,7 +284,7 @@ class _MyHomePageState extends State<SurveyPicker> {
                                                 : Container(
                                                     //width: 230,
                                                     padding: const EdgeInsets.only(
-                                                        bottom: 10),
+                                                        bottom: 30),
                                                     child: Row(
                                                       mainAxisAlignment:
                                                           MainAxisAlignment

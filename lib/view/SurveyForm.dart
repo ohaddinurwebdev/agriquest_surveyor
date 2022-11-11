@@ -243,7 +243,7 @@ class _MyHomePageState extends State<SurveyForm> {
                                                                               color:
                                                                                   Color(0xff577ebb)),
                                                                           iconSize:
-                                                                              22,
+                                                                              26,
                                                                           style: TextStyle(
                                                                               color: Colors
                                                                                   .black87,

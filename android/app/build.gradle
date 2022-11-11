@@ -52,8 +52,8 @@ android {
         applicationId "agriquest.surveyor"
         minSdkVersion 21
         targetSdkVersion flutter.targetSdkVersion
-        versionCode 8
-        versionName "1.00"
+        versionCode 9
+        versionName "1.01"
     }
 
     signingConfigs {

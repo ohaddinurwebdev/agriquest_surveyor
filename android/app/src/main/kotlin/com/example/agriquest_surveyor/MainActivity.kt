@@ -1,4 +1,4 @@
-package com.example.agriquest_surveyor
+package org.agriquest.surveyor
 
 import io.flutter.embedding.android.FlutterActivity
 
